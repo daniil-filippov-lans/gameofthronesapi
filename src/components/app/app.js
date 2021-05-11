@@ -4,6 +4,7 @@ import Header from "../header";
 import RandomChar from "../randomChar";
 import ErrorMassage from "../errorMassege";
 import CharacterPage from "../characterPage/";
+import { BooksPage, HousesPage, CharacterPage, BooksItem } from "../pages";
 
 export default class App extends Component {
 	state = {
