@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./randomChar.css";
 import gotService from "../../services/gotService";
 import Spinner from "../spinner";
-import ErrorMassage from "../errorMassege";
+import ErrorMassage from "../errorMassage";
+import PropTypes from 'prop-types'
 
 export default class RandomChar extends Component {
 	gotService = new gotService();
@@ -11,9 +12,13 @@ export default class RandomChar extends Component {
 		loading: true,
 		error: false,
 	};
+	static defaultProps = {
+		interval: 15000, 
+	};
+
 	componentDidMount() {
 		this.updateChar();
-		this.timerId = setInterval(this.updateChar, 1500);
+		this.timerId = setInterval(this.updateChar, this.props.interval);
 	}
 
 	componentWillUnmount() {
@@ -41,18 +46,22 @@ export default class RandomChar extends Component {
 
 	render() {
 		const { char, loading, error } = this.state;
-		const errorMassege = error ? <ErrorMassage /> : null;
+		const errorMassage = error ? <ErrorMassage /> : null;
 		const spinner = loading ? <Spinner /> : null;
 		const content = !(loading || error) ? <View char={char} /> : null;
 
 		return (
 			<div className="random-block rounded">
 				{content}
-				{errorMassege}
+				{errorMassage}
 				{spinner}
 			</div>
 		);
 	}
+}
+
+RandomChar.propTypes = {
+	interval: PropTypes.number
 }
 
 const View = ({ char }) => {

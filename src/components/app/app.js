@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container, Button } from "../../../node_modules/reactstrap";
 import Header from "../header";
 import RandomChar from "../randomChar";
-import ErrorMassage from "../errorMassege";
-import ItemList from "../itemList";
-import CharDetails from "../itemDetails";
+import ErrorMassage from "../errorMassage";
 import gotService from "../../services/gotService";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { BooksPage, HousesPage, CharacterPage, BooksItem } from "../pages";
@@ -48,7 +46,7 @@ export default class App extends Component {
 						<Row>
 							<Col lg={{ size: 5, offset: 0 }}>
 								{randomChar}
-								<Button
+								<Button 
 									color="secondary"
 									onClick={this.toggleRandomChar}
 								>

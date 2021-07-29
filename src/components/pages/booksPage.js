@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ItemList from "../itemList";
-import ItemDetails, { Field } from "../itemDetails";
-import ErrorMassage from "../errorMassege";
+import ErrorMassage from "../errorMassage";
 import gotService from "../../services/gotService";
 import { withRouter } from "react-router-dom";
 
@@ -22,17 +21,6 @@ class booksPage extends Component {
 		if (this.state.error) {
 			return <ErrorMassage />;
 		}
-
-		const itemDetails = (
-			<ItemDetails
-				itemId={this.state.selectedItem}
-				getData={this.gotService.getBook}
-			>
-				<Field field="publisher" label="Publisher" />
-				<Field field="numberOfPages" label="Number of pages" />
-				<Field field="released" label="Released" />
-			</ItemDetails>
-		);
 
 		return (
 			<ItemList

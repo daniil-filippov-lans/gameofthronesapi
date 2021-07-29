@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ItemList from "../itemList";
 import ItemDetails, { Field } from "../itemDetails";
-import ErrorMassage from "../errorMassege";
+import ErrorMassage from "../errorMassage";
 import gotService from "../../services/gotService";
 import RowBlock from "../rowBlock";
 
