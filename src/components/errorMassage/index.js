@@ -1,2 +1,2 @@
-import ErrorMassage from "./errorMassage";
+import ErrorMassage from './errorMassage';
 export default ErrorMassage;
